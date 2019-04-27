@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  dump1090:
+    build: .
+    command: "--device-index 0 --net --debug DdCcpj"
+    # command: "--help"
+    privileged: true
+    devices:
+      - "/dev/bus/usb"
+    ports:
+      - "8080:8080"
+      - "30003"
+      - "30005"
